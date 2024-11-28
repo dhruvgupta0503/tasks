@@ -1,0 +1,19 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "asg-backend"
+main = "src/index.ts"
+account_id = "e667e3076508cea6ec0141906c7dd854"
+compatibility_date = "2024-11-12"
+compatibility_flags = ["nodejs_compat"]
+
+# Workers Logs
+# Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/
+# Configuration: https://developers.cloudflare.com/workers/observability/logs/workers-logs/#enable-workers-logs
+[observability]
+enabled = true
+
+# Bind a D1 database. D1 is Cloudflare’s native serverless SQL database.
+# Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#d1-databases
+[[d1_databases]]
+binding = "DB"
+database_name = "asg"
+database_id = "21ecbb08-c10c-4022-b807-4dd18f625d88"
